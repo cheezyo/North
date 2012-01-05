@@ -20,9 +20,12 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
+  	<% if current_user != nil %>
   	 <%= f.label current_user.id  %><br />
   	<%= f.hidden_field :user_id, :value => current_user.id %>
-  	
+  	<% else %>
+  	<%= f.hidden_field :user_id, :value => User.first.id %>
+  	<% end %>
    
    
   </div>
