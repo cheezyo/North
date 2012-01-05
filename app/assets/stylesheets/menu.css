@@ -1,0 +1,36 @@
+
+nav ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+nav li{
+	padding:10px 20px 0 5px;
+	font-size:1.3em;
+	float:left;
+}
+
+nav li a{
+	
+	color:#fff;
+	text-decoration: none;
+
+}
+
+nav li a:hover{
+	
+}
+
+.subMenu a{
+	text-decoration: none;
+	color:#fff;
+}
+.subMenu ul {
+		margin:0;
+	padding:0 0 0 20px;
+	color:#fff;
+}
+.subMenu li  {
+	padding:0 20px 0 0;
+}

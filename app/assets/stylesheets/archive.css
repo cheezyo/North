@@ -1,0 +1,31 @@
+.blogsMonth{
+	float:left;
+	width:400px;
+}
+.blogsMonth ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.blogsMonth li{
+	padding: 10px 0 10px 0;
+}
+
+.blogsMonth li a{
+	color:#06396D;
+	text-decoration: none;
+	font-size: 1.2em;
+	
+}
+#month{
+	width:400px;
+}
+
+#month a{
+	color:#000;
+	font-size: 1.5em;
+	text-decoration: none;
+	padding:10px 0 10px 0;
+	line-height: 1.5;
+	font-weight: bold;
+}

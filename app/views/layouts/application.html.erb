@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NorthBlog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body >
+	
+	
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=508282202555713";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+	<div id="headerWrapper">
+		<header>
+			<div id="logo">
+			<img src="https://dl.dropbox.com/u/7238474/north/timthumb2.png">
+			</div>
+		</header>		
+	</div>
+	
+	<div id="navWrapper">
+		<nav>
+			<ul>
+				<li><%= link_to 'Hjem', root_path%></li>
+				<li><a href="javascript:void(0)"  onclick="showBloggers('bloggers', 0, 'k');showCategories('categories', 1, 'c');" id="k"> Bloggere</a>	</li>
+				<li><a href="javascript:void(0)"  onclick="showCategories('categories', 0, 'c');showBloggers('bloggers', 1, 'k');" id="c"> Kategorier</a></li>
+				<li><a href="/arkiv">Arkiv</a></li>
+			</ul>
+			
+		</nav>
+		
+	</div>
+	<div id="subMenuWrapper">
+		
+		<div id="categories" class="subMenu">
+			<% if Category.count > 0 %>
+			<div style="padding:10px 5px 0 5px;float:left;">
+				<ul>
+				<% Category.all.each do |c|%>
+				<div style="float:left;padding: 0 20px 0 0">
+				<li>
+				<%= link_to c.title.capitalize, c%>	
+				</li>
+					</div>
+				<% end %>
+				</ul>
+			</div>
+			<% end %>
+			</div>
+		
+		
+		
+		<div id="bloggers" class="subMenu">
+			<% if User.count > 0 %>
+			<div style="padding:10px 5px 0 5px;float:left;">
+				<ul>
+				<% User.all.each do |u|%>
+				<div style="float:left;padding: 0 20px 0 0">
+					<li>
+				<%= link_to u.fname.capitalize + " " + u.lname.capitalize, u%>	
+				</li>
+					</div>
+				<% end %>
+				</ul>
+			</div>
+			<% end %>
+			</div>
+			</div>
+	<div id="wrapper">
+
+		
+		<aside>
+			<div class="fb-like" data-href="http://www.facebook.com/northsec" data-send="true" data-width="300" data-show-faces="true"></div>
+		</aside>
+	<article>
+<section>
+<%= yield %>
+</section>
+</article>
+
+</div>
+<div id="footerWrapper"></div>
+</body>
+</html>

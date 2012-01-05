@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+
+  <p>
+    <%= f.label "Fornavn" %><br />
+    <%= f.text_field :fname %>
+  </p>
+  <p>
+    <%= f.label "Etternavn" %><br />
+    <%= f.text_field :lname %>
+  </p>
+  <p>
+    <%= f.label "Passord" %><br />
+    <%= f.password_field :password %>
+  </p>
+   <p>
+    <%= f.label "Gjenta passord" %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+	  
+  <p><%= f.submit "Lagre"%></p>
+<% end %>
+

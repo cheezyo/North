@@ -1,0 +1,28 @@
+
+    <h2>Blog Arkiv</h2>
+
+
+
+    
+    <% posts = Post.all(:order => "created_at DESC") %>
+    <% post_months = posts.group_by { |t| t.created_at.beginning_of_month } %>
+
+
+	<% n = 0 %>
+
+    <% post_months.each do |month, posts| %>
+    <div id="month">
+    <a href="javascript:void(0)"onclick="toggleMe('archiveList<%= n %>', this) "><%=  month.strftime("%B %Y") %></a>
+    </div>
+    <div id="archiveList<%= n %>" class="blogsMonth" style="display: none;">
+    <ul>
+       
+		<% for post in posts %>
+		<% u = User.find_by_id(post.user_id)%>
+   
+        	<li><%= link_to post.title, post %> av <%= link_to u.fname.capitalize + " " +  u.lname.capitalize, u  %></li>
+        <% end %>
+    </ul>
+    </div>
+    <% n += 1%>
+    <% end %>
