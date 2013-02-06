@@ -136,7 +136,7 @@ aside{
 #facebook{
 	width:300px;
 	float:left;
-	margin:10px 0 0 0;		
+	margin:10px 0 20px 0;		
 }
 #pic{
 
@@ -150,6 +150,14 @@ aside{
 	height:50px;
 	background-color:#06396D;
 	opacity: 0.7;
+}
+#opa1{
+	position:absolute;
+	top:486px;
+	width:300px;
+	height:50px;
+	background-color:#000;
+	opacity: 0.8;
 }
 
 
