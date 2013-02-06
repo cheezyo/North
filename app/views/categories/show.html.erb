@@ -1,11 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div id="pageHeader"><h1><%= @category.title %> </h1></div>
 
-<p>
-  <b>Title:</b>
-  <%= @category.title %>
-</p>
-<% Post.where(:catgegory_id => @category.id).each do |p|%>
-<p><%=link_to p.title, p%></p>
+
+
+<% Post.where(:catgegory_id => @category.id).order('created_at DESC').each do |p|%>
+<% user = User.find_by_id(p.user_id)%>
+<h3><%=link_to p.title.capitalize, p%> </h3> av <%= link_to user.fname.capitalize + " " +user.lname.capitalize, user%>
+<small><%= p.created_at.strftime("%d-%m-%Y")%></small>
+<p><%= p.content.truncate(140)%></p>
 <% end %>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

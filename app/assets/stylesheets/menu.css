@@ -21,13 +21,15 @@ nav li a{
 nav li a:hover{
 	
 }
-
+nav li a:visited{
+	color:#fff;
+}
 .subMenu a{
 	text-decoration: none;
 	color:#fff;
 }
 .subMenu ul {
-		margin:0;
+	margin:0;
 	padding:0 0 0 20px;
 	color:#fff;
 }

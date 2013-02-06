@@ -1,0 +1,92 @@
+
+#avatar{
+	float:left;
+	margin:5px 10px 0 0;
+}
+
+#avatarBig img {
+	max-width:150px;
+	height:100px;
+	float:left;
+	padding: 0 10px 10px 0;
+}
+
+#avatar img{
+	max-width:80px;
+	height:50px;
+	
+}
+#firstPost{
+	width: 600px;
+
+	float:left;
+	margin:0;
+	
+}
+#firstPost h1{
+	
+
+	margin: 0;
+	padding: 5px 5px 5px 0;
+
+}
+#firstPost a:visited{
+	color:#06396D;
+}
+#postBorder{
+	width:600px;
+	height:3px;
+	float:left;
+	margin:10px 0 10px 0;
+	border-bottom:1px dotted #666;
+}
+#splitViewPost{
+	width:290px;
+	float:left;
+	margin: 0 10px 0 0;
+}
+#splitViewPost h3{
+	margin:0;
+	padding:5px 5px 5px 0;
+
+}
+#splitViewPost a:visited{
+	color:#06396D;
+}
+#splitViewPost ul{
+	color:#06396D;
+}
+#link{
+	width:600px;
+	float:left;
+
+}
+.heading{
+
+	width:100%;
+
+}
+
+
+#pageHeader{
+	float:left;
+	width:100%;
+	
+	background: #D39435;
+	margin:0 0 40px 0;
+	border-radius:0 30px 30px 0;
+	color:#fff;
+
+}
+
+#pageHeader h1{
+	padding:10px;
+	margin:0;
+	color:#fff;
+	font-size:20px;
+
+}
+
+#pageHeader a{
+	color:#fff;
+}

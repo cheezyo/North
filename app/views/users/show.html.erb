@@ -1,24 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div id="pageHeader"><h1><%= @user.fname.capitalize + " " + @user.lname.capitalize %> </h1></div>
+<div id="avatarBig"><img src="https://dl.dropbox.com/u/7238474/north/avatar.jpg" />
+	<p><%= @user.content %></p>
+	
+</div>
 
-<p>
-  <b>Fname:</b>
-  <%= @user.fname %>
-</p>
+<div id="postBorder"></div>
+<div id="splitViewPost">
+<h3>Mer fra denne brukeren:</h3>
+<ul>
+<% Post.where(:user_id => @user.id).order('created_at DESC').each do |p|%>
 
-<p>
-  <b>Lname:</b>
-  <%= @user.lname %>
-</p>
+	<li>
+<%= link_to p.title.capitalize, p  %>
+<small><%= p.created_at.strftime("%d-%m-%Y") %></small>
+</li>
 
-<p>
-  <b>Password digest:</b>
-  <%= @user.password_digest %>
-</p>
-<% Post.where(:user_id => @user.id).each do |p|%>
-<p>
-<%= link_to p.title, p  %>
-</p>
 <% end %>
-
+</ul>
+</div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

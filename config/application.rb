@@ -55,6 +55,8 @@ module NorthBlog
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.secret_token ='fe566457179489a1fb917f724c1363f6ab00e72ae2e783360785d8310897a44e797fb72dbe1bf7e3
+35f316b9e1b1a60e68c1dccd337bbb408fb7aea46c28e0a0'
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

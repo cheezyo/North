@@ -1,31 +1,41 @@
-<h1>Listing posts</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>User</th>
-    <th>Catgegory</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<div id="pageHeader"><h1>Nyeste blogger</h1></div>
+
+<% n = 0%>
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <% u = User.find_by_id(post.user_id)%>
-    <td><%= u.fname.capitalize + " " +  u.lname.capitalize  %></td>
-    
-    <td><%= Category.find_by_id(post.catgegory_id).title %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% user = User.find_by_id(post.user_id)%>
+	<% if n == 0 %>
+		<div id="firstPost">
+			<div id="avatar"><img src="https://dl.dropbox.com/u/7238474/north/avatar.jpg" style="margin:5px 0 0 0;" alt="avatatPicture"/></div>
+			<div class="heading"><h1><%= post.title.capitalize %></h1></div>
+			<small><%= post.created_at.strftime("%d-%m-%Y") %></small>
+			<small><i><%= link_to user.fname.capitalize + " " + user.lname.capitalize, user %></i></small>
+			<p><%= post.content.truncate(700)%></p>
+			<p><%= link_to 'Les mer...', post %></p>
+			<%= link_to 'edit', edit_post_path(post)%>
+		</div>
+		
+		<div id="postBorder"></div>
+	<% else %>
+		<div id="splitViewPost">
+			<div id="avatar"><img src="https://dl.dropbox.com/u/7238474/north/avatar.jpg" alt="avatatPicture"/></div>
+			<div class="heading"><h3><%= post.title%></h3></div>
+			<small><%= post.created_at.strftime("%d-%m-%Y") %></small>
+			<small><i><%= link_to user.fname.capitalize + " " + user.lname.capitalize, user %></i></small>
+			<p><%= post.content.truncate(200)%></p>
+			<p><%= link_to 'Les mer...', post %></p>
+			<%= link_to 'edit', edit_post_path(post)%>
+		</div>
+		<% if n.even?%>
+		<div id="postBorder"></div>
+		<% end %>
+	<% end %>
+
+
+	<%  n += 1%>
 <% end %>
-</table>
 
-<br />
-
+<div id="link">
 <%= link_to 'New Post', new_post_path %>
+</div>

@@ -1,6 +1,6 @@
 NorthBlog::Application.routes.draw do
   
-  root :to => 'pages#index'
+  root :to => 'posts#index'
   
   resources :categories
   resources :pages

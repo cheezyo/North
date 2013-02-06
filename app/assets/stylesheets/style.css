@@ -2,15 +2,33 @@ body{
 	font-family:"Times New Roman",Georgia,Serif;
 	background-image: url('https://dl.dropbox.com/u/7238474/north/bg-body.gif');
 }
-h1, h2, h3{
-color:#8C605B;
+a{
+	text-decoration: none;
 }
+a:hover{
+	text-decoration: underline;
+}
+h1{
+	font-size: 35px;
+	color:#06396D;
+	margin:0;
+}
+h3{
+	color:#06396D;
+	margin:0;
+}
+h3 a{
+	color:#06396D;
+}
+
 
 #headerWrapper{
 	width:100%;
-	height:266px;
+	height:268px;
 	background-color:#5B687C;
 }
+
+
 #sliderWrapper{
 	margin:10px 0 10px 0;
 	width:100%;
@@ -21,11 +39,10 @@ color:#8C605B;
 	width:100%;
 	height:41px;
 	border-top:1px solid #fff;
-
 	background-color:#06396D;
 }
 #slider{
-	width:1060px;
+	width:960px;
 	height:140px;
 	margin:0 auto;
 	background-color:#000;
@@ -38,68 +55,74 @@ color:#8C605B;
 	background-color:#5B687C;
 }
 #wrapper{
-	width:1060px;
+	width:960px;
 	margin:0 auto;
 	position:relative;
 	color:#000;
 }
-
+#innerWrapper{
+	float:left;
+	background:#fff;
+}
 header{
 
-	width:1060px;
+	width:960px;
 	height:140px;
 	margin:0 auto;
-	background-color:;
 }
 #logo{
 
-	height:266px;
-	width: 936px;
+
+	width: 960px;
 	margin:0 auto;
 }
 #logo img{
-	height:266px;
+	width:960px;
 
 }
 
 
 nav {
 	margin:0 auto;
-	width:1060px;
+	width:960px;
 	height:40px;
 	background-color:#06396D;
+	
 }
 #subMenuWrapper{
 	width:100%;
-	background-color:#6D8AA7;
+		background-color:#06396D;
+		opacity: 0.7;
 }
 #categories{
-	width: 1060px;
+	width: 960px;
 	height: 40px;
 	margin:0 auto;
 	z-index: 30;
 	display: none;
-	background-color:#6D8AA7;
+		background-color:#06396D;
+	
 }
 #bloggers{
 
-	width: 1060px;
+	width: 960px;
 	height: 40px;
 	margin:0 auto;
 	z-index: 30;
 	display: none;
-	background-color:#6D8AA7;
+	background-color:#06396D;
+	
 
 }
 article{
 	float:left;
-	width:730px;
+	width:630px;
 	padding:0 0 20px 0;
 	overflow-x: hidden;
 }
 section{
 	float:left;
-	width:700px;
+	width:600px;
 	padding:15px;
 
 	
@@ -108,10 +131,26 @@ aside{
 	float:right;
 	width:300px;
 	height:400px;
-	padding: 15px;
-	
+	padding: 15px;	
 }
+#facebook{
+	width:300px;
+	float:left;
+	margin:10px 0 0 0;		
+}
+#pic{
 
+	float:left;
+	height:200px;
+}
+#opa{
+	position:absolute;
+	top:165px;
+	width:300px;
+	height:50px;
+	background-color:#06396D;
+	opacity: 0.7;
+}
 
 
 footer{
