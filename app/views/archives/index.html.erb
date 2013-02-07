@@ -1,7 +1,6 @@
 
-    <h2>Blog Arkiv</h2>
-
-
+   
+<div id="pageHeader"> <h1>Blog Arkiv</h1></div>
 
     
     <% posts = Post.all(:order => "created_at DESC") %>
@@ -12,17 +11,18 @@
 
     <% post_months.each do |month, posts| %>
     <div id="month">
-    <a href="javascript:void(0)"onclick="toggleMe('archiveList<%= n %>', this) "><%=  month.strftime("%B %Y") %></a>
+    <a href="javascript:void(0)"onclick="toggleMe('archiveList<%= n %>', this) "><%=  month.strftime("%B %Y") %></a><img src="https://dl.dropbox.com/u/7238474/north/arrow.png" alt="arrow"/>
     </div>
-    <div id="archiveList<%= n %>" class="blogsMonth" style="display: none;">
+    <div id="archiveList<%= n %>" class="blogsMonth" style="display:<% if n == 0 %> block <% else %> none <%end%>;">
     <ul>
        
 		<% for post in posts %>
 		<% u = User.find_by_id(post.user_id)%>
    
-        	<li><%= link_to post.title, post %> av <%= link_to u.fname.capitalize + " " +  u.lname.capitalize, u  %></li>
+        	<li><%= link_to post.title.capitalize, post %> av <%= link_to u.fname.capitalize + " " +  u.lname.capitalize, u  %></li>
         <% end %>
     </ul>
     </div>
     <% n += 1%>
     <% end %>
+

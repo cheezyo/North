@@ -1,6 +1,9 @@
 
 
-<div id="pageHeader"><h1>Nyeste blogger</h1></div>
+<div id="pageHeader"><h1>Nyeste innlegg</h1>
+				  
+
+</div>
 
 <% n = 0%>
 <% @posts.each do |post| %>
@@ -10,7 +13,7 @@
 			<div id="avatar"><img src="https://dl.dropbox.com/u/7238474/north/avatar.jpg" style="margin:5px 0 0 0;" alt="avatatPicture"/></div>
 			<div class="heading"><h1><%= post.title.capitalize %></h1></div>
 			<small><%= post.created_at.strftime("%d-%m-%Y") %></small>
-			<small><i><%= link_to user.fname.capitalize + " " + user.lname.capitalize, user %></i></small>
+			<small><i><%= link_to user.fname.capitalize + " " + user.lname.capitalize, user, :class => "author" %></i></small>
 			<p><%= post.content.truncate(700)%></p>
 			<p><%= link_to 'Les mer...', post %></p>
 			<%= link_to 'edit', edit_post_path(post)%>

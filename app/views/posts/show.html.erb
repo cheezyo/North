@@ -20,10 +20,11 @@
 <div id="splitViewPost">
 <h3>Mer fra denne brukeren:</h3>
 <ul>
-<% Post.where(:user_id => user.id).limit(10).each do |p|%>
+<% Post.where(:user_id => user.id).limit(10).order('created_at DESC').each do |p|%>
+<% if @post.id != p.id %>
 
-<li><%= link_to p.title, p %></li>
-
+<li><%= link_to p.title.capitalize, p %></li>
+<%end%>
 <% end %>
 </ul>
 </div>
@@ -31,9 +32,10 @@
 <div id="splitViewPost">
 	<h3>Mer i denne kategorien:</h3>
 	<ul>
-	<% Post.where(:catgegory_id => @post.catgegory_id).limit(10).each do |c|%>
-	<li><%= link_to c.title, c %></li>
-	
+	<% Post.where(:catgegory_id => @post.catgegory_id).order('created_at DESC').limit(10).each do |p|%>
+	<% if @post.id != p.id %>
+	<li><%= link_to p.title.capitalize, p %></li>
+	<% end %>
 	<% end %>
 	</ul>
 </div>

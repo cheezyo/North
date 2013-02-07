@@ -32,6 +32,14 @@
 	
 	<div id="navWrapper">
 		<nav>
+ 			<div id="searchBox">
+ 				
+			<%= form_tag posts_path, :method => :get do %>  
+			
+				<%= text_field_tag :search, params[:search], :class => 'searchField' %>  
+				<%= submit_tag "Søk", :name => nil, :class => 'searchButton' %>  
+			<% end %>
+ 			</div>
 			<ul>
 				<li><%= link_to 'Hjem', root_path%></li>
 				<li><a href="javascript:void(0)"  onclick="showBloggers('bloggers', 0, 'k');showCategories('categories', 1, 'c');" id="k"> Bloggere</a>	</li>
@@ -83,7 +91,7 @@
 		<div id="innerWrapper">
 		<aside>
 		
-			<div id="pic"><div id="opa"><h3 style="color:#fff;margin:15px 0 0 10px;padding:0;">Lik oss på facebook</h3></div><img src="https://dl.dropbox.com/u/7238474/north/shutterstock_70010218_small.jpg"  alt="bilde"/></div>
+			<div id="pic"><div id="opa"><h3 style="color:#fff;margin:15px 0 0 10px;padding:0;">Følg oss på facebook</h3></div><img src="https://dl.dropbox.com/u/7238474/north/shutterstock_70010218_small.jpg"  alt="bilde"/></div>
 			<div id="facebook">
 			<div class="fb-like" data-href="http://www.facebook.com/northsec" data-send="true" data-width="300" data-show-faces="true" style="float:left;"></div>
 			
@@ -97,6 +105,10 @@
 </article>
 </div>
 </div>
-<div id="footerWrapper"></div>
+<div id="footerWrapper">
+
+	<footer></footer>
+	
+</div>
 </body>
 </html>

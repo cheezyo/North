@@ -1,13 +1,10 @@
 class PostsController < ApplicationController
   # GET /posts
-  # GET /posts.json
-  def index
-    @posts = Post.all(:order => "created_at DESC")
+  # GET /posts.json 
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
+  def index
+@posts = Post.search(params[:search])
+
   end
 
   # GET /posts/1
